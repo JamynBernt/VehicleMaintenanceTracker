@@ -1,0 +1,18 @@
+server:
+  servlet:
+    context_path: /api
+  port: 8080
+    
+app:
+  datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/final_project
+    username: root
+    password: Password
+      
+    pool-size: 30
+    driver-class-name: com.mysql.cj.jdbc.Driver
+      
+spring:
+  flyway:
+    baselineOnMigrate: true
+    validateOnMigrate: false
