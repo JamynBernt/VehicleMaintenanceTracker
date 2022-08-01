@@ -27,11 +27,11 @@ public class UserDataAccessService {
 				user.getUserPassword());
 	}
 	
-	public User loginUser(String userName, String userPassword) {
+	public User loginUser(String email, String userPassword) {
 		
-		String sql = "SELECT * FROM User WHERE email = ? AND user_password = ?;";
+		String sql = "SELECT * FROM user WHERE email = ? AND user_password = ?;";
 		try {
-			User user = jdbcTemplate.queryForObject(sql, mapUserFromDb(), userName, userPassword);
+			User user = jdbcTemplate.queryForObject(sql, mapUserFromDb(), email, userPassword);
 			return user;
 		} catch(EmptyResultDataAccessException e) {
 			return null;

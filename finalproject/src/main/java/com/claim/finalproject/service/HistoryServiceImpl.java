@@ -22,7 +22,7 @@ public class HistoryServiceImpl implements HistoryService{
 	
 	@Override
 	public History createNewHistory(HistoryRequestDto historyRequestDto) {
-		return historyDataAccessService.createNewVehicle(historyRequestDto);
+		return historyDataAccessService.createNewHistory(historyRequestDto);
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class HistoryDataAccessService {
 	}
 	
 	@Transactional
-	public History createNewVehicle(HistoryRequestDto historyRequestDto) {
+	public History createNewHistory(HistoryRequestDto historyRequestDto) {
 		Integer newHistoryNumber = null;
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		String sql = "INSERT INTO history(vehicle_identification_number, description) VALUES(?,?);";

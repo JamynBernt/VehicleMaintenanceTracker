@@ -36,6 +36,6 @@ public class UserServiceImpl implements UserService {
 	public User loginUser(UserLoginDto userLoginDto) {
 		// TODO Auto-generated method stub
 		
-		return userDataAccessService.loginUser(userLoginDto.getUserName(), userLoginDto.getUserPassword());
+		return userDataAccessService.loginUser(userLoginDto.getEmail(), userLoginDto.getUserPassword());
 	}	
 }

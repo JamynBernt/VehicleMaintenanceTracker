@@ -21,10 +21,10 @@ import lombok.NoArgsConstructor;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserLoginDto {
 	
-	@NotNull(message = "username is required")
-	@NotBlank(message = "username cannot be blank")
-	@JsonProperty(value ="userName")
-	private String userName;
+	@NotNull(message = "email is required")
+	@NotBlank(message = "email cannot be blank")
+	@JsonProperty(value ="email")
+	private String email;
 	
 	@NotNull(message = "password is required")
 	@NotBlank(message = "password cannot be blank")
