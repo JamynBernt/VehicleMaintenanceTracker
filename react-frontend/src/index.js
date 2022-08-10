@@ -10,6 +10,8 @@ import MainMenu from './routes/mainMenu';
 import { AppBar } from '@mui/material';
 import MyVehicles from './routes/myVehicles';
 import Home from './routes/home';
+import History from './routes/history';
+import NewVehicle from './routes/newVehicle';
 
 
 
@@ -24,8 +26,10 @@ root.render(
           <Route path="register" element={<Register />} />
           <Route path="login" element={<Login />} />
           <Route path="mainMenu" element={<MainMenu />} />
-          <Route path="myVehicles" element={<MyVehicles />} />
-        </Route>
+          <Route path="myVehicles" element={<MyVehicles />}/>
+          <Route path="history" element={<History />}/>
+          <Route path="newVehicle" element={<NewVehicle/>}/>
+         </Route>
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

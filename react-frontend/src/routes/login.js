@@ -16,11 +16,13 @@ export default function Login() {
     e.preventDefault()
     const loginData = { email, userPassword}
     loginAPI(loginData).then((response) => setUser(response));
-    localStorage.setItem('user', JSON.stringify({
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName 
-    }))
+    if (user.email !== undefined){
+      localStorage.setItem('user', JSON.stringify({
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName 
+      }))
+    } else(console.log("Email undefined"))
     navigate('/mainMenu')
     console.log(user?.firstName)
   }

@@ -13,4 +13,6 @@ public interface VehicleService {
 
 	List<Vehicle> getAllVehiclesForUser(String email);
 
+	Vehicle sellVehicle(String email, String vin);
+
 }

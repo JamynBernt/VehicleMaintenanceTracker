@@ -37,6 +37,12 @@ public class VehicleServiceImpl implements VehicleService{
 		// TODO Auto-generated method stub
 		return vehicleDataAccessService.getAllVehiclesForUser(email);
 	}
+
+	@Override
+	public Vehicle sellVehicle(String email, String vin) {
+		// TODO Auto-generated method stub
+		return vehicleDataAccessService.sellVehicle(email, vin);
+	}
 	
 
 }

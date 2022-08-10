@@ -19,6 +19,7 @@ import com.claim.finalproject.entity.History;
 public class HistoryDataAccessService {
 	
 	private JdbcTemplate jdbcTemplate;
+	
 
 	@Autowired
 	public HistoryDataAccessService(JdbcTemplate jdbcTemplate) {
@@ -66,6 +67,13 @@ public class HistoryDataAccessService {
 					.description(description)
 					.build();
 		};
+	}
+
+	public String deleteHistoryById(Integer id) {
+		String sql = "DELETE FROM history WHERE history_number = ?"	;
+		jdbcTemplate.update(sql, id);
+		
+		return "History deleted successfully";
 	}
 
 }

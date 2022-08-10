@@ -28,10 +28,16 @@ export default function Appbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Vehicle Maintenance Tracker
           </Typography>
-          {!user?.firstName}{
+          {user?.firstName &&
+            <Button color="inherit" onClick={() =>{navigate('/mainMenu');}}>Main Menu</Button>
+          }
+          {user?.firstName &&
+            <Button color="inherit" onClick={() =>{localStorage.removeItem('user'); navigate('/home');}}>Logout</Button>
+          }
+          {!user?.firstName &&
             <Button color="inherit" onClick={() => navigate('/login')}>Login</Button>
           }
-          {!user?.firstName}{
+          {!user?.firstName &&
             <Button color="inherit" onClick={() => navigate('/register')}>Register</Button>
           }
         </Toolbar>

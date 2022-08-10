@@ -12,4 +12,6 @@ public interface HistoryService {
 
 	List<History> getAllHistoryByVin(String vin);
 
+	String deleteHistoryById(Integer id);
+
 }

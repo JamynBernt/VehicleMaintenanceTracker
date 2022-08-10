@@ -1,27 +1,27 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { Container, Paper, fabClasses, Button } from '@mui/material';
+import {registerAPI} from '../service/API';
 
 export default function Register() {
+  const navigate = useNavigate();
   const paperStyle={padding:'50px 20px', width:375,margin:"20px auto"}
   const[firstName, setFirstName]=useState('')
   const[lastName, setLastName]=useState('')
   const[email, setEmail]=useState('')
   const[userPassword, setUserPassword]=useState('')
 
-  const handleClick=(e)=>{
+  const handleClick = async e => {
     e.preventDefault()
-    const user={firstName, lastName, email, userPassword}
-    console.log(user)
-    fetch("http://localhost:8080/api/user/register",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(user)
-    }).then(()=>{
-      console.log("User Registered Successfully!")
-    })
+    const user = { firstName, lastName, email, userPassword}
+    registerAPI(user).then((response) => {window.alert('Successfully registered!');
+    });
+    navigate('/login')
+    console.log(user?.firstName)
   }
+
   return (
 
     <Container>

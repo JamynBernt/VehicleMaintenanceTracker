@@ -30,4 +30,10 @@ public class HistoryServiceImpl implements HistoryService{
 		return historyDataAccessService.getAllHistoryByVin(vin);
 	}
 
+	@Override
+	public String deleteHistoryById(Integer id) {
+		// TODO Auto-generated method stub
+		return historyDataAccessService.deleteHistoryById(id);
+	} 
+
 }

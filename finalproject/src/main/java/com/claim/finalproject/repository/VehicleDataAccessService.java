@@ -45,6 +45,12 @@ public class VehicleDataAccessService {
 				.year(vehicleRequestDto.getYear())
 				.build();
 	}
+//	public VehicleResponseDto sellVehicle() {
+//		
+//		String sql = "UPDATE vehicle SET email = ? WHERE vin = ?;";
+//		jdbcTemplate.update(sql, )
+//		
+//	}
 
 	public Vehicle findByVin(String vin) {
 		String sql = "SELECT * FROM vehicle WHERE vehicle_identification_number = ?;";
@@ -77,5 +83,11 @@ public class VehicleDataAccessService {
 					.year(year)					
 					.build();
 		};
+	}
+
+	public Vehicle sellVehicle(String email, String vin) {
+		String sql = "UPDATE vehicle SET email =? WHERE vehicle_identification_number =?";
+		jdbcTemplate.update(sql, email, vin);
+		return null;
 	}
 }
